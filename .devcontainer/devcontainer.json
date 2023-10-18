@@ -12,10 +12,7 @@
 			"extensions": [ "ms-python.python",
                       "hediet.vscode-drawio",
                       "ngtystr.ppm-pgm-viewer-for-vscode"
-                    ],
+                    ]
 		}
   }
-
-
-
 }
