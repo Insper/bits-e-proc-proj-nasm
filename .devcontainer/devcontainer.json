@@ -1,4 +1,19 @@
 {
   "image": "rafaelcorsi/bits",
-  "postCreateCommand": "pip3 install --user -r requirements-docker.txt"
+  "postCreateCommand": "pip3 install --user -r requirements-docker.txt",
+  
+  "customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {},
+			"extensions": [ "ms-python.python",
+                      "hediet.vscode-drawio",
+                      "ngtystr.ppm-pgm-viewer-for-vscode"
+                    ],
+		}
+  }
+
+
+
 }
