@@ -224,7 +224,7 @@ def test_linha():
 def test_add32_noOverlfow():
     ram = {0: 2, 1: 5, 2: 3, 3: 10}
     tst = {4: ram[0] + ram[2], 5: ram[1] + ram[3]}
-    assert abs_nasm_test("add32.nasm", ram, tst)
+    assert nasm_test("add32.nasm", ram, tst)
 
 
 @pytest.mark.telemetry_files(source("add32.nasm"))
@@ -239,3 +239,21 @@ def test_add32_full():
     ram = {0: 32, 1: 32771, 2: 100, 3: 36867}
     tst = {4: 133, 5: 4102}
     assert nasm_test("add32.nasm", ram, tst)
+
+
+@pytest.mark.telemetry_files(source("vectorFill.nasm"))
+def test_vectorFill_example():
+    ram = {3: 7, 4: 4}
+    tst = {}
+    for i in range(ram[4]):
+        tst[5 + i] = ram[3]
+    assert nasm_test("vectorFill.nasm", ram, tst, 5000)
+
+
+@pytest.mark.telemetry_files(source("vectorFill.nasm"))
+def test_vectorFill_generic():
+    ram = {3: 32, 4: 55}
+    tst = {}
+    for i in range(ram[4]):
+        tst[5 + i] = ram[3]
+    assert nasm_test("vectorFill.nasm", ram, tst, 5000)
