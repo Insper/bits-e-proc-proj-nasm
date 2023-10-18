@@ -1,20 +1,16 @@
 {
   "image": "rafaelcorsi/bits",
   "postCreateCommand": [
-    "pip3 install --user -r requirements-docker.txt",
-    "telemetry auth"
+    "./.devcontainer/postCreateCommand.sh"
   ],
-  
+
   "customizations": {
 		"vscode": {
 			"settings": {},
 			"extensions": [ "ms-python.python",
                       "hediet.vscode-drawio",
                       "ngtystr.ppm-pgm-viewer-for-vscode"
-                    ],
+                    ]
 		}
   }
-
-
-
 }
