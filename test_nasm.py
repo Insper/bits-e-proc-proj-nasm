@@ -231,11 +231,11 @@ def test_add32_noOverlfow():
 def test_add32_onlyOverflow():
     ram = {0: 0, 1: 32771, 2: 0, 3: 36867}
     tst = {4: 1, 5: 4102}
-    assert abs_nasm_test("add32.nasm", ram, tst)
+    assert nasm_test("add32.nasm", ram, tst)
 
 
 @pytest.mark.telemetry_files(source("add32.nasm"))
 def test_add32_full():
     ram = {0: 32, 1: 32771, 2: 100, 3: 36867}
     tst = {4: 133, 5: 4102}
-    assert abs_nasm_test("add32.nasm", ram, tst)
+    assert nasm_test("add32.nasm", ram, tst)
