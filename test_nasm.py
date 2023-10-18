@@ -116,7 +116,7 @@ def test_pow():
 
     ram = {1: 16}
     tst = {0: 256}
-    assert nasm_test("pow.nasm", ram, tst, 10000)
+    assert nasm_test("pow.nasm", ram, tst, 50000)
 
 
 @pytest.mark.telemetry_files(source("isEven.nasm"))
@@ -218,6 +218,13 @@ def test_linha():
     ram = {}
     tst = {}
     nasm_test("quadrado.nasm", ram, tst, 10000)
+
+
+@pytest.mark.telemetry_files(source("letra.nasm"))
+def test_linha():
+    ram = {}
+    tst = {}
+    nasm_test("letra.nasm", ram, tst, 100000)
 
 
 @pytest.mark.telemetry_files(source("add32.nasm"))
