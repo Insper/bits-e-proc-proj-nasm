@@ -1,8 +1,8 @@
 {
   "image": "rafaelcorsi/bits",
-  "postCreateCommand": [
+  "postCreateCommand": 
     "pip3 install --user -r requirements-docker.txt",
-  ],
+  
   
   "customizations": {
 		// Configure properties specific to VS Code.
